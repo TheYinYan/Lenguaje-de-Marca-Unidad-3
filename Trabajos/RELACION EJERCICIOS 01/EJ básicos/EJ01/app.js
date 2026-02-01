@@ -4,10 +4,6 @@ const edad = 18;
 
 const app = document.querySelector("#app");
 
-const parrafo = document.createElement("p");
-
-parrafo.innerHTML = `Me llamo ${nombre} y tengo ${edad} años`;
-
-app.appendChild(parrafo);
-
-parrafo.className=("EJ01");
+app.innerHTML = `<p class="EJ01">
+                    Me llamo ${nombre} y tengo ${edad} años
+                </p>`;
