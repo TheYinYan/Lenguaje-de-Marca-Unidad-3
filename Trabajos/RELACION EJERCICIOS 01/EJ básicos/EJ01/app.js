@@ -4,7 +4,7 @@ const edad = 18;
 
 const app = document.querySelector("#app");
 
-const parrafo = document.createElement("p")
+const parrafo = document.createElement("p");
 
 parrafo.innerHTML = `Me llamo ${nombre} y tengo ${edad} años`;
 
