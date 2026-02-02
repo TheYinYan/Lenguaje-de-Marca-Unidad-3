@@ -55,5 +55,5 @@ const strong = document.createElement("strong");
 strong.textContent = `Malaga FC 3 - 0 Burgo`;
 
 div.appendChild(strong);
-document.querySelector(".ejercicio").appendChild(div);
+ejercicio.appendChild(div);
 strong.className = ("green");
