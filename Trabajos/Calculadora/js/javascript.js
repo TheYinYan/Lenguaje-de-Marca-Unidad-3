@@ -74,7 +74,7 @@ function actualizarPantalla() {
  *
  */
 function mostrarNumeroPantalla(numero) { 
-
+        
 }
 
 /**

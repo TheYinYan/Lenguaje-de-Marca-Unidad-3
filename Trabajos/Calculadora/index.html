@@ -1,65 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculadora web">
-    <meta name="author" content="Sergio Sánchez Martín">
     <title>Calculadora</title>
-    <link rel="shortcut icon" href="./imagenes/calculator-icon-windows-v1.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./estilos.css">
+    <link rel="shortcut icon" href="imagenes/calculator-icon-windows-v1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
     <header>
-        <h1 class="titulo-calculadora">Calculadora</h1>
+        <h1>Calculadora</h1>
     </header>
 
     <main>
-        <div class="contenedor-calculadora">
-            <div id="pantalla" class="pantalla color-normal">0</div>
-            <div class="contenedor-botonera">
-                <!-- 1ª fila -->
-                <button class="boton control doble" id="borrar-entrada">CE</button>
-                <button class="boton control" id="borrar-todo">C</button>
-                <button class="boton control" id="retroceso">⌫</button>
+        <div class="calculadora">
+            <div class="panel">0</div>
+            <div class="botonera">
 
-                <!-- 2ª fila -->
-                <button class="boton inmediata" id="inversa"></button>
-                <button class="boton inmediata" id="cuadrado"></button>
-                <button class="boton inmediata" id="raiz"></button>
-                <button class="boton operacion" id="dividir">/</button>
+                <button class="boton control doble" id="Borrar-entrada">CE</button>
+                <button class="boton control" id="Borrar-todo">C</button>
+                <button class="boton control" id="Retroceso">⌫</button>
+                
+                <button class="boton inmediatas" id="inverso">1/x</button>
+                <button class="boton inmediatas" id="Cuadrado">x²</button>
+                <button class="boton inmediatas" id="Raíz cuadrada">√</button>
+                <button class="boton operador">/</button>
 
-                <!-- 3ª fila -->
                 <button class="boton numero">7</button>
                 <button class="boton numero">8</button>
                 <button class="boton numero">9</button>
-                <button class="boton operacion" id="multiplicar">x</button>
+                <button class="boton operador">x</button>
 
-                <!-- 3ª fila -->
                 <button class="boton numero">4</button>
                 <button class="boton numero">5</button>
                 <button class="boton numero">6</button>
-                <button class="boton operacion" id="restar">-</button>
+                <button class="boton operador">-</button>
 
-                <!-- 4ª fila -->
                 <button class="boton numero">1</button>
                 <button class="boton numero">2</button>
                 <button class="boton numero">3</button>
-                <button class="boton operacion" id="sumar">+</button>
+               <button class="boton operador">+</button>
 
-                <!-- 5ª fila -->
-                <button class="boton numero doble">0</button>
-                <button class="boton punto" id="punto">.</button>
-                <button class="boton igual" id="igual">=</button>
+                <button class="boton numero doble">0</button>            
+                <button class="boton decimal">·</button>
+                <button class="boton operador" id="igual">=</button>
+
             </div>
         </div>
     </main>
 
     <footer>
-        <p class="descripcion">Ejercicio 02 UD 03 - Lenguajes de marcas y sistemas de gestión de información.</p>
-        <p class="autor"><u>Proyecto realizado por</u>: 👉 SERGIO SÁNCHEZ MARTÍN 👈 (Declaro que no he usado IA en el proyecto)</p>
+        <p>Ejercicio 02 UD 03 - Lenguajes de marcas y sistemas de gestión de información.</p>
+        <p class="nombre">PROYECTO REALIZADO POR: SAMUEL RUIZ MARTIN (DECLARO NO HE USADO IA EN EL PROYECTO)</p>
     </footer>
-    <script src="./js/javascript.js"></script>
+    <script src="js/javascript.js"></script>
 </body>
+
 </html>
