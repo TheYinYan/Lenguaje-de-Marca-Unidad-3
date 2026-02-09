@@ -49,7 +49,6 @@ footer {
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     width: 320px;
-    display: grid;
 }
 
 .panel {
@@ -84,7 +83,7 @@ footer {
     cursor: pointer;
 }
 
-.boton:hover, #igual:hover {
+.boton:hover, .igual:hover {
     background-color: #3a3a3a;
 }
 
@@ -103,6 +102,9 @@ footer {
 }
 
 /* Colores del texto para cada operación  */
+.color-normal{
+    color: white;
+}
 
 .color-error {
     color: red;
@@ -110,6 +112,10 @@ footer {
 
 .color-suma {
     color: #4bff4b;
+}
+
+.color-resta{
+    color: #ff884b;
 }
 
 .color-multiplica {
@@ -132,6 +138,6 @@ footer {
     color: #00ffbf;
 }
 
-#igual{
+.igual{
     background-color:  #ff9500;
 }
