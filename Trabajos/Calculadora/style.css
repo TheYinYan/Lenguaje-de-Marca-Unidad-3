@@ -84,7 +84,7 @@ footer {
     cursor: pointer;
 }
 
-.boton:hover {
+.boton:hover, #igual:hover {
     background-color: #3a3a3a;
 }
 
@@ -130,4 +130,8 @@ footer {
 
 .color-Raizcuadrada {
     color: #00ffbf;
+}
+
+#igual{
+    background-color:  #ff9500;
 }
