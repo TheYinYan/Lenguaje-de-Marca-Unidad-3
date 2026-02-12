@@ -7,14 +7,8 @@ let resultadoMostrado = false; // Para saber si hay que empezar un nuevo número
 // Obtento los elementos de la web necesarios a partir del DOM
 const botonesNumeros = [...document.querySelectorAll(".numero")]; // Devuelve un Array apartir de NodeList
 const pantalla = document.querySelector(".panel")
-const botnosOperador = [...document.querySelectorAll(".operador")]
+const botonesOperador = [...document.querySelectorAll(".operador")]
 const botonIgual = document.querySelector("#igual")
-
-// for (let i = 0; i < botonesNumeros.length; i++) {
-//     botonesNumeros[i].addEventListener("click",() =>{
-//         mostrarNumeroPantalla(botonesNumeros[i].textContent);
-//     });    
-// }
 
 // Metodo forEach() [Arrays]
 botonesNumeros.forEach(boton => {
@@ -23,7 +17,7 @@ botonesNumeros.forEach(boton => {
     });
 });
 
-botnosOperador.forEach(boton => {
+botonesOperador.forEach(boton => {
     boton.addEventListener("click", () => {
         manejarOperador(boton.textContent);
     });
@@ -92,6 +86,7 @@ function actualizarPantalla() {
  *
  */
 function mostrarNumeroPantalla(numero) {
+    pantallaColorNormal();
     if (resultadoMostrado) {
         pantalla.textContent = valorAct;
         resultadoMostrado = false;
@@ -159,7 +154,9 @@ function calcularOperacion() {
         case "/":
             if (num2 === 0) {
                 valorAct = "Error"
-                // Hay que ponerlo en rojo
+                // Poner a Rojo
+                pantalla.classList.replace("color-normal", "color-error");
+                actualizarPantalla();
                 return;
             }
             resultado = num1 / num2;
@@ -178,7 +175,7 @@ function calcularOperacion() {
  *
  */
 function pantallaColorNormal() {
-
+    pantalla.className = "panel color-normal";
 }
 /**
  * @brief Borra el número introducido actualmente en la pantalla.
@@ -236,22 +233,21 @@ function operacionInmediata(operacion) {
  *
  */
 function aplicarColorResultado(operador) {
-    let classnames = pantalla.className.split(" ");
+    pantallaColorNormal();
     switch (operador) {
         case "+":
-            classnames[1] = "color-suma";
+            pantalla.classList.replace("color-normal", "color-suma");
             break;
         case "-":
-            classnames[1] = "color-resta";
+            pantalla.classList.replace("color-normal", "color-resta");
             break;
         case "x":
-            classnames[1] = "color-multiplica";
+            pantalla.classList.replace("color-normal", "color-multiplica");
             break;
         case "/":
-            classnames[1] = "color-divide";
+            pantalla.classList.replace("color-normal", "color-divide");
             break;
     }
-    pantalla.className = classnames.join(" ")
 }
 
 /**
