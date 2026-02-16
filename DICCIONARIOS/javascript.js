@@ -3,7 +3,7 @@
 const carta = {
     cafe: { precio: 1.2, emoji: "☕", texto: "Café", alergenos: [] },
     te: { precio: 1.1, emoji: "🍵", texto: "Té chai", alergenos: [] },
-    pitufo: { precio: 1.8, emoji: "🥪", texto: "Pitufo nixto", alergenos: ["gluten"] },
+    pitufo: { precio: 1.8, emoji: "🥪", texto: "Pitufo mixto", alergenos: ["gluten"] },
     donut: { precio: 2, emoji: "🍩", texto: "Donut", alergenos: ["gluten", "huevo"] }
 };
 // ELEMENTOS HTML DEL DOM
