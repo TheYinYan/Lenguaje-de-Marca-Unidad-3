@@ -3,12 +3,14 @@ let valorAct = "0"; // Lo que se ve en pantalla
 let valorAnt = null; // Numero anterior 
 let operadorAct = null; // +, -, *, /
 let resultadoMostrado = false; // Para saber si hay que empezar un nuevo número 
+let puntodecimal = true; //Si se puede usar o no el punto decimal
 
 // Obtento los elementos de la web necesarios a partir del DOM
 const botonesNumeros = [...document.querySelectorAll(".numero")]; // Devuelve un Array apartir de NodeList
-const pantalla = document.querySelector(".panel")
-const botonesOperador = [...document.querySelectorAll(".operador")]
-const botonIgual = document.querySelector("#igual")
+const pantalla = document.querySelector(".panel");
+const botonesOperador = [...document.querySelectorAll(".operador")];
+const botonIgual = document.querySelector("#igual");
+const botonDecimal = document.querySelector("#decimal");
 
 // Metodo forEach() [Arrays]
 botonesNumeros.forEach(boton => {
@@ -23,6 +25,8 @@ botonesOperador.forEach(boton => {
     });
 });
 
+
+botonDecimal.addEventListener("click", mostrarPuntoPantalla)
 botonIgual.addEventListener("click", calcularOperacion);
 
 /**
@@ -42,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
  *
  */
 function deshabilitarPunto() {
-
+    botonDecimal.classList.replace("decimal", "deshabilitado");
+    puntodecimal = false;
 }
 
 /**
@@ -53,7 +58,8 @@ function deshabilitarPunto() {
  *
  */
 function habilitarPunto() {
-
+    botonDecimal.classList.replace("deshabilitado", "decimal");
+    puntodecimal = true;
 }
 
 
@@ -107,7 +113,11 @@ function mostrarNumeroPantalla(numero) {
  * Deshabilita el botón de punto para evitar múltiples decimales.
  */
 function mostrarPuntoPantalla() {
-
+    if (puntodecimal) {
+        valorAct += "."
+    }
+    deshabilitarPunto();
+    actualizarPantalla();
 }
 
 /**
