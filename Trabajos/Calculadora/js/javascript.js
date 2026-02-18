@@ -83,6 +83,9 @@ function actualizarPantalla() {
     while (valorAct.length > 12) {
         valorAct = valorAct.slice(0, -1);
     }
+    if (!String(valorAct).includes(".")) {
+        habilitarPunto();
+    }
     pantalla.textContent = valorAct;
 }
 
