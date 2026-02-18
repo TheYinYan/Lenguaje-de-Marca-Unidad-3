@@ -13,6 +13,7 @@ const botonIgual = document.querySelector("#igual");
 const botonDecimal = document.querySelector("#decimal");
 const borrarEntradas = document.querySelector("#Borrar-entrada");
 const borrarTodos = document.querySelector("#Borrar-todo");
+const eliminar = document.querySelector("#eliminar");
 
 // Metodo forEach() [Arrays]
 botonesNumeros.forEach(boton => {
@@ -27,6 +28,7 @@ botonesOperador.forEach(boton => {
     });
 });
 
+eliminar.addEventListener("click", retroceder)
 borrarTodos.addEventListener("click", borrarTodo);
 borrarEntradas.addEventListener("click", borrarEntrada);
 botonDecimal.addEventListener("click", mostrarPuntoPantalla)
@@ -78,6 +80,9 @@ function habilitarPunto() {
 *
 */
 function actualizarPantalla() {
+    while (valorAct.length > 12) {
+        valorAct = valorAct.slice(0, -1);
+    }
     pantalla.textContent = valorAct;
 }
 
@@ -138,6 +143,7 @@ function manejarOperador(operador) {
     valorAnt = valorAct;
     valorAct = "0";
     resultadoMostrado = false;
+    habilitarPunto();
 }
 
 /**
@@ -197,7 +203,8 @@ function pantallaColorNormal() {
  *
  */
 function borrarEntrada() {
-    pantallaColorNormal()
+    pantallaColorNormal();
+    habilitarPunto();
     valorAct = "0";
     actualizarPantalla();
 }
@@ -226,7 +233,16 @@ function borrarTodo() {
  *
  */
 function retroceder() {
+    if (valorAct.slice(-1) === ".") {
+        habilitarPunto();
+    }
+    valorAct = valorAct.slice(0, -1);
 
+    if (valorAct === "") {
+        valorAct = "0";
+    }
+
+    actualizarPantalla();
 }
 
 /**
