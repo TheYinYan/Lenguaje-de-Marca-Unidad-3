@@ -11,6 +11,7 @@ const pantalla = document.querySelector(".panel");
 const botonesOperador = [...document.querySelectorAll(".operador")];
 const botonIgual = document.querySelector("#igual");
 const botonDecimal = document.querySelector("#decimal");
+const borrarEntradas = document.querySelector("#Borrar-entrada");
 
 // Metodo forEach() [Arrays]
 botonesNumeros.forEach(boton => {
@@ -25,7 +26,7 @@ botonesOperador.forEach(boton => {
     });
 });
 
-
+borrarEntradas.addEventListener("click", borrarEntrada)
 botonDecimal.addEventListener("click", mostrarPuntoPantalla)
 botonIgual.addEventListener("click", calcularOperacion);
 
@@ -194,7 +195,9 @@ function pantallaColorNormal() {
  *
  */
 function borrarEntrada() {
-
+    pantallaColorNormal()
+    valorAct = "0";
+    actualizarPantalla();
 }
 /**
  * @brief Restablece completamente la calculadora a su estado inicial.
