@@ -12,6 +12,7 @@ const botonesOperador = [...document.querySelectorAll(".operador")];
 const botonIgual = document.querySelector("#igual");
 const botonDecimal = document.querySelector("#decimal");
 const borrarEntradas = document.querySelector("#Borrar-entrada");
+const borrarTodos = document.querySelector("#Borrar-todo");
 
 // Metodo forEach() [Arrays]
 botonesNumeros.forEach(boton => {
@@ -26,7 +27,8 @@ botonesOperador.forEach(boton => {
     });
 });
 
-borrarEntradas.addEventListener("click", borrarEntrada)
+borrarTodos.addEventListener("click", borrarTodo);
+borrarEntradas.addEventListener("click", borrarEntrada);
 botonDecimal.addEventListener("click", mostrarPuntoPantalla)
 botonIgual.addEventListener("click", calcularOperacion);
 
@@ -207,7 +209,14 @@ function borrarEntrada() {
  *
  */
 function borrarTodo() {
+    valorAct = "0";
+    valorAnt = null;
+    operadorAct = null;
+    resultadoMostrado = false;
 
+    habilitarPunto();
+    pantallaColorNormal();
+    actualizarPantalla();
 }
 /**
  * @brief Elimina el último carácter del número mostrado en pantalla.
